@@ -7,7 +7,7 @@ import Basepackage.Baseclass;
 import Pagespackages.Loginpage;
 
 public class Logintest extends Baseclass {
-	
+
 	@Test
 	
 	
@@ -16,9 +16,11 @@ public class Logintest extends Baseclass {
 	public void testLogin(String username,String password)
 	{
 		Loginpage lp=new Loginpage(driver);
-		lp.enterusername(username);
-		lp.enterpassword(password);
-		lp.clicklogin();
+		lp.username(username);
+		lp.password(password);
+		lp.loginbutton();
+		
 	}
 
+	
 }
