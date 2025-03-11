@@ -17,15 +17,15 @@ public class CreateExcelTest {
 
         // Define different Excel files with their column headers
         String[][] fileDetails = {
-            {"TestResults_Login.xlsx", "LoginResults", "Username,Password"}
+            {"TestResults_Login.xlsx", "LoginResults", "Username,Password,ExpectedMessage,IsValid"}
         };
 
         // Sample data for each file
         String[][][] data = {
             { // Login Data
-                {"Admin", "admin123"},
-                { "aadmin123", "admin123"},
-                {  "Admin","Admin123"}
+                {"Admin", "admin123"," ","Yes"},
+                { "aadmin123", "admin123","Invalid credentials","No"},
+                {  "Admin","Admin123","Invalid credentials","No"}
             }
         }; 
 

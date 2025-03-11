@@ -23,6 +23,13 @@ public class Loginpage {
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement loginbutton;
 	
+	
+	@FindBy(xpath="//h6[text()=\"Dashboard\"]")
+	private WebElement dashboardHeader ;
+	
+	@FindBy(xpath="//p[contains(@class, \"oxd-alert-content-text\")]")
+	private WebElement erormessage;
+	
 	// Constructor
 	public Loginpage(WebDriver driver) {
 		this.driver = driver;
@@ -46,6 +53,14 @@ public class Loginpage {
 	public void clickLoginButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(loginbutton)); // Wait until clickable
 		loginbutton.click();
+	}
+	
+	public boolean isDashboarddisplayed() {
+		return dashboardHeader.isDisplayed();
+	}
+    
+	public String Errormessage() {
+		return erormessage.getText();
 	}
 
 
